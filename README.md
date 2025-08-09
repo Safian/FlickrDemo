@@ -23,23 +23,6 @@
 - **Swinject** (Dependency Injection)
 - **Flickr API**
 - **ViewInspector** tesztekhez
-- **Moduláris mappastruktúra**
-
----
-
-## Könyvtárstruktúra
-├── Core/
-│ ├── API/
-│ └── Model/
-├── DependencyInjection/
-├── Features/
-│ ├── Search/
-│ └── Detail/
-├── Managers/
-├── Resources/
-├── UI/
-└── FlickrDemoTests/
-
 
 ---
 
