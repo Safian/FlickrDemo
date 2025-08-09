@@ -12,9 +12,7 @@ import XCTest
 
 import ViewInspector
 
-
 final class PhotoDetailViewTests: XCTestCase {
-    
     func testTitleAndNavigationBar_andOnAppear() throws {
         let view = PhotoDetailView(photo: Photo.mock)
         let inspected = try view.inspect()
@@ -52,7 +50,6 @@ final class PhotoDetailViewTests: XCTestCase {
 // MARK: - Helpers
 
 extension PhotoDetailView {
-    
     func inspectableClampedOffset(_ proposed: CGSize, scale: CGFloat, screenW: CGFloat, screenH: CGFloat) -> CGSize {
         let mutable = self
         mutable.screenW = screenW
