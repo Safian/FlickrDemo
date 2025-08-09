@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "4C52A58D-F940-4747-A1C4-7BDBEA9CD21B",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "codeCoverage" : {
+          "codeCoverageEnabled" : true,
+          "targets" : [
+            {
+              "containerPath" : "container:FlickrDemo.xcodeproj",
+              "identifier" : "31F9D5E12E463C8500C6CED3",
+              "name" : "FlickrDemo"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FlickrDemo.xcodeproj",
+      "identifier" : "31F9D5E12E463C8500C6CED3",
+      "name" : "FlickrDemo"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:FlickrDemo.xcodeproj",
+        "identifier" : "31F9D5EE2E463C8700C6CED3",
+        "name" : "FlickrDemoTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -5,8 +5,9 @@
 //  Created by Szabolcs Sáfián on 2025. 08. 09..
 //
 
-import Combine
 @testable import FlickrDemo
+
+import Combine
 import XCTest
 
 final class FlickrAPIServiceImplTests: XCTestCase {

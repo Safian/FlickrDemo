@@ -6,9 +6,11 @@
 //
 
 @testable import FlickrDemo
+
 import SwiftUI
-import ViewInspector
 import XCTest
+
+import ViewInspector
 
 final class PhotoDetailViewTests: XCTestCase {
     func testTitleAndNavigationBar_andOnAppear() throws {
