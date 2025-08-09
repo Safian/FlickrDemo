@@ -12,33 +12,20 @@ import XCTest
 
 import ViewInspector
 
+
 final class PhotoDetailViewTests: XCTestCase {
+    
     func testTitleAndNavigationBar_andOnAppear() throws {
-        let photo = Photo(
-            id: "1",
-            owner: "o",
-            secret: "s",
-            server: "s",
-            title: "Teszt Cím"
-        )
-        let view = PhotoDetailView(photo: photo)
+        let view = PhotoDetailView(photo: Photo.mock)
         let inspected = try view.inspect()
         let vStack = try inspected.geometryReader().vStack()
         XCTAssertNoThrow(try vStack.asyncImage(0))
-        XCTAssertEqual(try vStack.text(1).string(), "Teszt Cím")
+        XCTAssertEqual(try vStack.text(1).string(), Photo.mock.title)
         XCTAssertNoThrow(try vStack.spacer(2))
     }
 
     func testClampedOffsetBounds() {
-        // Lefedik az offset összes ágát:
-        let mock = Photo(
-            id: "1",
-            owner: "o",
-            secret: "s",
-            server: "s",
-            title: "Title"
-        )
-        let view = PhotoDetailView(photo: mock)
+        let view = PhotoDetailView(photo: Photo.mock)
         let clampedOffset = view.inspectableClampedOffset(CGSize(width: 100, height: 200),
                                                           scale: 2, screenW: 100, screenH: 200)
         XCTAssertNotNil(clampedOffset)
@@ -58,13 +45,14 @@ final class PhotoDetailViewTests: XCTestCase {
                                                     screenW: 100,
                                                     screenH: 200)
         XCTAssertTrue(offset1.width >= -0.01 && offset1.width <= 0.01)
-        XCTAssertTrue(offset2.width <= 150) // clamp-elt lesz
+        XCTAssertTrue(offset2.width <= 150)
     }
 }
 
 // MARK: - Helpers
 
 extension PhotoDetailView {
+    
     func inspectableClampedOffset(_ proposed: CGSize, scale: CGFloat, screenW: CGFloat, screenH: CGFloat) -> CGSize {
         let mutable = self
         mutable.screenW = screenW
